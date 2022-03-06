@@ -49,3 +49,51 @@ SectionUseCase."HiFi" {
 
 - A segunda configuração neste exemplo é o `Comment`. Isso é usado como o nome de exibição na ferramenta alsaucm e no Pulseaudio. Isso pode ser definido livremente.
 
+### A definição de caso de uso
+A parte mais complicada é o conteúdo real do arquivo `HIFI` que precisa ser criado. Este arquivo é basicamente uma coleção de scripts para habilitar/desabilitar o mixer e comandos para passar de uma entrada/saída para outra.
+
+- Este é um exemplo mínimo de um arquivo de caso de uso.
+```
+$ vim /usr/share/alsa/ucm2/sun50i-a64-audio/HiFi
+```
+- no arquivo HiFi
+```
+SectionVerb {
+	EnableSequence [
+		cset "name='Headphone Playback Switch' off"
+		cset "name='Headphone Source Playback Route' DAC"
+		cset "name='Headphone Playback Volume' 50%"
+	]
+	DisableSequence [
+	]
+
+	Value {
+		PlaybackPCM "hw:${CardId},0"
+		CapturePCM "hw:${CardId},0"
+	}
+}
+```
+- O `SectionVerb` define quais comandos precisam ser executados para habilitar ou desabilitar este caso de uso. Isso é usado principalmente para trazer todo o mixer em um estado conhecido na inicialização, então provavelmente é uma boa ideia definir um valor para todos os controles no mixer aqui.
+
+- Os comandos nas seções desta seção são todos comandos `cset`. Esses comandos correspondem aos comandos que você normalmente usaria com a ferramenta `amixer` do pacote alsa-utils. O primeiro comando faz isso quando executado com o amixer:
+```
+$ amixer cset name='Headphone Playback Switch' off
+numid=36,iface=MIXER,name='Headphone Playback Switch'
+  ; type=BOOLEAN,access=rw------,values=2
+  ; values=on,on
+```
+- Para obter uma lista de todos os controles que você pode definir, você também pode usar o comando amixer:
+```
+$ amixer controls
+numid=35,iface=MIXER,name='Headphone Source Playback Route'
+numid=36,iface=MIXER,name='Headphone Playback Switch'
+numid=17,iface=MIXER,name='Headphone Playback Volume'
+... a lot more lines here ...
+```
+- Eles devem ser bastante fáceis de correlacionar com os controles que você vê no alsamixer. 
+- Os controles seguem um esquema de nomenclatura padrão. 
+- Os controles deslizantes de volume para dispositivos na página de reprodução do alsamixer são chamados `$name Playback Volume`, o mesmo controle na página de captura é chamado `$name Capture Volume`. 
+- O botão mudo abaixo dos controles deslizantes de volume de reprodução é chamado `$name Playback Switche` os botões de ativação na página Captura são chamados `$name Capture Switch`. 
+- Controles que não possuem um controle deslizante de volume, mas uma seleção de texto cujo nome é `$name Playback Route`
+
+<img>(https://wiki.postmarketos.org/images/thumb/c/c9/Alsa_mixer_mapping.png/800px-Alsa_mixer_mapping.png)<img>

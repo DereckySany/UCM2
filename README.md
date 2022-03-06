@@ -96,4 +96,13 @@ numid=17,iface=MIXER,name='Headphone Playback Volume'
 - O botão mudo abaixo dos controles deslizantes de volume de reprodução é chamado `$name Playback Switche` os botões de ativação na página Captura são chamados `$name Capture Switch`. 
 - Controles que não possuem um controle deslizante de volume, mas uma seleção de texto cujo nome é `$name Playback Route`
 
-<img>(https://wiki.postmarketos.org/images/thumb/c/c9/Alsa_mixer_mapping.png/800px-Alsa_mixer_mapping.png)<img>
+![800px-Alsa_mixer_mapping](https://user-images.githubusercontent.com/28354751/156912949-245827ba-d8b1-463a-acb5-bae740d2e7b6.png)
+### Depurando configurações do UCM
+- Recarregue as configurações do UCM
+`alsaucm reload` deve recarregar a configuração para você, mas isso não funciona no momento. Uma reinicialização completa é necessária para recarregar totalmente a configuração do UCM.
+
+- Monitorar eventos ALSA
+`alsactl monitor` permite monitorar os eventos ALSA, especialmente para detecção de jack. 
+- O nome do evento no log deve corresponder à configuração do UCM JackControl se você quiser alterar as configurações do ALSA quando um conector for conectado ou removido.
+
+[![Ajuda](https://wiki.postmarketos.org/logo.png)](https://wiki.postmarketos.org/wiki/Alsa_UCM).

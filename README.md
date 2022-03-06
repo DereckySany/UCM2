@@ -12,6 +12,9 @@ $ sudo apt install alsa-utils
 ```
 ```
 $ aplay -l
+```
+Saida do comando:
+```
  card 0: sun50ia64audio [sun50i-a64-audio], dispositivo 0: 1c22c00.dai-sun8i-codec-aif1 sun8i-codec-aif1-0 [1c22c00.dai-sun8i-codec- aif1 sun8i-codec-aif1-0] 
   Subdispositivos: 1/1 
   Subdispositivo #0: subdispositivo #0
@@ -23,7 +26,7 @@ $ aplay -l
 ```
 $ vim /usr/share/alsa/ucm2/sun50i-a64-audio/sun50i-a64-audio.conf
 ```
-- no arquivo sun50i-a64-audio.conf
+no arquivo sun50i-a64-audio.conf
 ```
 Syntax 2
 
@@ -56,7 +59,7 @@ A parte mais complicada é o conteúdo real do arquivo `HIFI` que precisa ser cr
 ```
 $ vim /usr/share/alsa/ucm2/sun50i-a64-audio/HiFi
 ```
-- no arquivo HiFi
+no arquivo HiFi:
 ```
 SectionVerb {
 	EnableSequence [

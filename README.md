@@ -91,10 +91,11 @@ numid=17,iface=MIXER,name='Headphone Playback Volume'
 ... a lot more lines here ...
 ```
 - Eles devem ser bastante fáceis de correlacionar com os controles que você vê no alsamixer. 
-- Os controles seguem um esquema de nomenclatura padrão. 
-- Os controles deslizantes de volume para dispositivos na página de reprodução do alsamixer são chamados `$name Playback Volume`, o mesmo controle na página de captura é chamado `$name Capture Volume`. 
-- O botão mudo abaixo dos controles deslizantes de volume de reprodução é chamado `$name Playback Switche` os botões de ativação na página Captura são chamados `$name Capture Switch`. 
-- Controles que não possuem um controle deslizante de volume, mas uma seleção de texto cujo nome é `$name Playback Route`
+* Os controles seguem um esquema de nomenclatura padrão.
+* Os controles deslizantes de volume para dispositivos na página de reprodução do alsamixer são chamados `$name Playback Volume` 
+* O mesmo controle na página de captura é chamado `$name Capture Volume`.
+* O botão mudo abaixo dos controles deslizantes de volume de reprodução é chamado `$name Playback Switche` os botões de ativação na página Captura são chamados `$name Capture Switch`. 
+* Controles que não possuem um controle deslizante de volume,mas uma seleção de texto cujo nome é `$name Playback Route`.
 
 ![800px-Alsa_mixer_mapping](https://user-images.githubusercontent.com/28354751/156912949-245827ba-d8b1-463a-acb5-bae740d2e7b6.png)
 ### Depurando configurações do UCM

@@ -104,5 +104,5 @@ numid=17,iface=MIXER,name='Headphone Playback Volume'
 - Monitorar eventos ALSA
 `alsactl monitor` permite monitorar os eventos ALSA, especialmente para detecção de jack. 
 - O nome do evento no log deve corresponder à configuração do UCM JackControl se você quiser alterar as configurações do ALSA quando um conector for conectado ou removido.
-
+# Ajuda e Creditos
 [![Ajuda](https://wiki.postmarketos.org/logo.png)](https://wiki.postmarketos.org/wiki/Alsa_UCM).

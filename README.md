@@ -97,7 +97,7 @@ numid=17,iface=MIXER,name='Headphone Playback Volume'
 * O botão mudo abaixo dos controles deslizantes de volume de reprodução é chamado `$name Playback Switche` os botões de ativação na página Captura são chamados `$name Capture Switch`. 
 * Controles que não possuem um controle deslizante de volume,mas uma seleção de texto cujo nome é `$name Playback Route`.
 
-![800px-Alsa_mixer_mapping](https://user-images.githubusercontent.com/28354751/156912949-245827ba-d8b1-463a-acb5-bae740d2e7b6.png)
+![800px-Alsa_mixer_mapping](https://github.com/DereckySany/UCM2/blob/main/src/800px-Alsa_mixer_mapping.png)
 ### Depurando configurações do UCM
 - Recarregue as configurações do UCM
 `alsaucm reload` deve recarregar a configuração para você, mas isso não funciona no momento. Uma reinicialização completa é necessária para recarregar totalmente a configuração do UCM.

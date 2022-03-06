@@ -1,7 +1,7 @@
 # UCM2
 **Alsa UCM ou UCM2**.
 
-O "Alsa [U]se [C]ase [M]anager" descreve como configurar o mixer para determinados casos de uso (como "tocar áudio", "chamar"). Ele também descreve como modificar o estado do mixer para rotear o áudio para determinadas saídas e entradas e como controlar esses dispositivos.
+O `"Alsa [U]se [C]ase [M]anager"` descreve como configurar o mixer para determinados casos de uso (como "tocar áudio", "chamar"). Ele também descreve como modificar o estado do mixer para rotear o áudio para determinadas saídas e entradas e como controlar esses dispositivos.
 
 - Isso basicamente cobre as mesmas coisas que os perfis fazem no Pulseaudio, exceto que os arquivos UCM são mais fáceis de escrever e também funcionam sem o Pulseaudio em execução. Se uma configuração UCM estiver presente para um cartão, o pulseaudio ignorará os perfis integrados e gerará um perfil baseado nos arquivos UCM.
 

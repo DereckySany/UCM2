@@ -27,9 +27,9 @@ Saida do comando:
 $ vim /usr/share/alsa/ucm2/sun50i-a64-audio/sun50i-a64-audio.conf
 ```
 no arquivo sun50i-a64-audio.conf
-```
-Syntax 2
 
+- Syntax
+```
 SectionUseCase."HiFi" {
 	File "HiFi"
 	Comment "Play high quality music"
